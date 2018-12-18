@@ -19,9 +19,11 @@ class Route {
     let verDistance = Math.abs(this.endingLocation.vertical - this.beginningLocation.vertical)
     let horDistance = Math.abs(eastWest.indexOf(this.endingLocation.horizontal) - eastWest.indexOf(this.beginningLocation.horizontal));
     return verDistance + horDistance
-  }
+  };
 
-  estimatedTime(peak)
+  estimatedTime(peak) {
+    return peak == true ? this.blocksTravelled() / 2 : this.blocksTravelled() / 3;
+  }
 }
 
 
